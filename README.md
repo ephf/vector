@@ -2,9 +2,16 @@
 
 Small vector implementation in C.
 
+## Compilation
+
+This library offers two macros for controlling where function definitions are placed. By default, definitions are always included in the header file. If you want control, compile with `-DVECSETIMPL` and define the `VECIMPL` macro where you want definitions.
+
+## Example
+
 ```c
 #include "vector.h"
 #include <assert.h>
+#include <stdio.h>
 
 int main(void) {
     vector(int) numbers = vec(1, 2, 3);
@@ -38,7 +45,7 @@ int main(void) {
 | --- | --- |
 | `vector(t)` | Vector type (expands to `t*`) |
 | `struct vector` | Meta-data pertaining to allocated vectors |
-| `nullvec` | An empty vector |
+| `nullvec` | An empty vector, `((void*) 0)` |
 
 | Function / Macro | Description | Return Value |
 | --- | --- | --- |
@@ -52,5 +59,4 @@ int main(void) {
 
 ## Notes
 
-- Assumes `NULL == 0`
 - Assumes `__builtin_clzll` exists
