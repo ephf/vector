@@ -49,12 +49,12 @@ int main(void) {
 
 | Function / Macro | Description | Return Value |
 | --- | --- | --- |
-| `const struct vector* vinf(vector(t) v)` | Gets the meta-data of vector `v` | A `const` pointer to the vector meta-data |
-| `struct vector* voff(vector(t) v)` | Gets the allocation offset of vector `v`, use in combination with `free()` to free vectors | A pointer to the start of the vector allocation |
-| `vector(t) resv(vector(t)* v, size_t n)` | Reserves `n` items on vector `v` | A pointer to the newly allocated vector on success, or sets `errno` and returns `nullvec` on error |
-| `vector(t) push(vector(t)* v, t a...)` | Pushes items `a` to the end of vector `v` | A pointer to the newly allocated vector on success, or sets `errno` and returns `nullvec` on error |
-| `t* pop(vector(t)* v)` | Removes the last element from `v` | A pointer to the removed element on success, or sets `errno` and returns `NULL` on error |
-| `size_t len(vector(t) v)` | Gets the length of vector `v` | The length in items of vector `v` |
+| `const struct vector* vinf(vector(t) vector)` | Gets the meta-data of vector `vector` | A `const` pointer to the vector meta-data |
+| `struct vector* voff(vector(t) vector)` | Gets the allocation offset of vector `vector`, use in combination with `free()` to free vectors | A pointer to the start of the vector allocation |
+| `vector(t) resv(vector(t)* vector, size_t n)` | Reserves `n` items on vector `vector` | A pointer to the newly allocated vector on success, or sets `errno` and returns `nullvec` on error |
+| `vector(t) push(vector(t)* vector, t a...)` | Pushes items `a` to the end of vector `vector` | A pointer to the newly allocated vector on success, or sets `errno` and returns `nullvec` on error |
+| `t* pop(vector(t)* vector)` | Removes the last element from `vector` | A pointer to the removed element on success, or sets `errno` and returns `NULL` on error |
+| `size_t len(vector(t) vector)` | Gets the length of vector `vector` | The length in items of vector `v` |
 | `vector(t) vec(t a...)` | Creates a vector of items `a` | A newly allocated vector of type `typeof(a[0])` including all items `a` |
 
 ## Notes
